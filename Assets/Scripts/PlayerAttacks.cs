@@ -27,5 +27,15 @@ public class PlayerAttacks : MonoBehaviour
         {
             Manager.getInstance().animator.SetTrigger("coin");
         }
+
+        // testing intems abils
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Manager.getInstance().ActivateItem(new RedHeal());
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Manager.getInstance().ActivateItem(new SpeedUp());
+        }
     }
 }

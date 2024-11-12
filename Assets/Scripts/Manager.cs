@@ -9,7 +9,11 @@ public class Manager : MonoBehaviour
 
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private PlayerHealth playerHealth;
     public GameObject Player { get { return player; } }
+    public PlayerHealth PlayerHealth { get { return playerHealth; } }
+
 
     public Animator animator;
 
@@ -26,5 +30,21 @@ public class Manager : MonoBehaviour
         return instance;
     }
 
+    // Item System
+    public void ActivateItem(Item item)
+    {
+        Debug.Log("Item activated");
+        item.Do();
+        if (item.ActionTime > 0)
+        {
+            StartCoroutine(DelayedAction(item.ActionTime, item.Undo));
+        }
+    }   
     
+    IEnumerator DelayedAction(float delay, System.Action action)
+    {
+        yield return new WaitForSeconds(delay);
+        Debug.Log("Item aisabled");
+        action.Invoke();
+    }
 }
