@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Tomato : MonoBehaviour
 {
     private Animator animator;
-
+    private TomatoHealth tomatoHealth;
 
     private Vector3 punchDirection;
     public Vector3 PunchDirection { get { return punchDirection; } }
@@ -22,10 +20,17 @@ public class Tomato : MonoBehaviour
     private float punchSpeed;
     public float PunchSpeed { get { return punchSpeed; } }
 
-    // Start is called before the first frame update
+    [SerializeField] private float damageAmount;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        tomatoHealth = GetComponent<TomatoHealth>();
+
+        if (tomatoHealth == null)
+        {
+            Debug.LogError("TomatoHealth не найден на объекте Tomato");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,6 +39,7 @@ public class Tomato : MonoBehaviour
         {
             animator.SetTrigger("isPunched");
             punchDirection = (Manager.getInstance().Player.transform.rotation * Vector3.forward).normalized;
+            tomatoHealth.TakeDamage(damageAmount);
         }
     }
 }
