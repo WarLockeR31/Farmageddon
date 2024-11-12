@@ -7,9 +7,13 @@ public class Manager : MonoBehaviour
 {
     private static Manager instance;
 
+    [SerializeField]
+    private GameObject player;
+    public GameObject Player { get { return player; } }
 
     public Animator animator;
-    private void Start()
+
+    private void Awake()
     {
         instance = this;
     }
@@ -21,4 +25,6 @@ public class Manager : MonoBehaviour
         }
         return instance;
     }
+
+    
 }

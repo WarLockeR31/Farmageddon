@@ -30,10 +30,12 @@ AnimationClip:
       value: {fileID: 1351451613, guid: d1f7111db6eeec24fbdd931753b7c4e5, type: 3}
     - time: 0.4
       value: {fileID: 1993182955, guid: d1f7111db6eeec24fbdd931753b7c4e5, type: 3}
+    - time: 0.48333332
+      value: {fileID: -941312625, guid: d1f7111db6eeec24fbdd931753b7c4e5, type: 3}
     - time: 0.75
-      value: {fileID: 1993182955, guid: d1f7111db6eeec24fbdd931753b7c4e5, type: 3}
+      value: {fileID: -941312625, guid: d1f7111db6eeec24fbdd931753b7c4e5, type: 3}
     attribute: m_Sprite
-    path: Hands
+    path: Canvas/Hands
     classID: 114
     script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
     flags: 2
@@ -45,7 +47,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2817465596
+      path: 3071496858
       attribute: 2015549526
       script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
       typeID: 114
@@ -59,7 +61,8 @@ AnimationClip:
     - {fileID: 440710327, guid: d1f7111db6eeec24fbdd931753b7c4e5, type: 3}
     - {fileID: 1351451613, guid: d1f7111db6eeec24fbdd931753b7c4e5, type: 3}
     - {fileID: 1993182955, guid: d1f7111db6eeec24fbdd931753b7c4e5, type: 3}
-    - {fileID: 1993182955, guid: d1f7111db6eeec24fbdd931753b7c4e5, type: 3}
+    - {fileID: -941312625, guid: d1f7111db6eeec24fbdd931753b7c4e5, type: 3}
+    - {fileID: -941312625, guid: d1f7111db6eeec24fbdd931753b7c4e5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
