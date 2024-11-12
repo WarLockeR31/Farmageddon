@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TomatoPunched : StateMachineBehaviour
+public class TomatoWaiting : StateMachineBehaviour
 {
+    private GameObject playerObj;
     private GameObject tomatoObj;
     private Tomato tomatoScript;
-    private float timer;
+    private float visionRadius;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (!playerObj)
+        {
+            playerObj = Manager.getInstance().Player;
+        }
+
         if (!tomatoObj)
         {
             tomatoObj = animator.gameObject;
@@ -21,25 +27,23 @@ public class TomatoPunched : StateMachineBehaviour
             tomatoScript = tomatoObj.GetComponent<Tomato>();
         }
 
-        timer = tomatoScript.PunchFlightTime;
+        visionRadius = tomatoScript.VisionRadius;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (timer <= 0)
+        if ((playerObj.transform.position - tomatoObj.transform.position).magnitude <= visionRadius)
         {
-            animator.SetTrigger("isStopped");
+            animator.SetTrigger("isTargeted");
         }
-        timer -= Time.deltaTime;
-        tomatoObj.transform.position += tomatoScript.PunchDirection * tomatoScript.PunchSpeed * Time.deltaTime;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        tomatoScript.isPunchedFalse();
-    }
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
