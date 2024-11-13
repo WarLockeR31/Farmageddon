@@ -378,7 +378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 7454108268137801469}
-  speed: 12
 --- !u!108 &951141362669994352
 Light:
   m_ObjectHideFlags: 0
@@ -1240,6 +1239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1509373116241560374}
+  playerHealth: {fileID: 8893762496277798827}
   animator: {fileID: 8653622674274480948}
 --- !u!114 &4556459178900666768
 MonoBehaviour:
