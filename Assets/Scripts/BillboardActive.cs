@@ -7,8 +7,9 @@ using UnityEngine;
 /// </summary>
 public class BillboardActive : MonoBehaviour
 {
-    void Update()
+    void LateUpdate()
     {
-        transform.forward = Camera.main.transform.forward;
+        Vector3 targetPosition = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
+        transform.LookAt(targetPosition);
     }
 }

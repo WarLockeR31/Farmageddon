@@ -17,7 +17,8 @@ public class BillboardPassive : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.forward = Camera.main.transform.forward;
+        Vector3 targetPosition = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
+        transform.LookAt(targetPosition);
     }
 
     void OnBecameVisible()

@@ -980,6 +980,7 @@ GameObject:
   - component: {fileID: 4045245984361312872}
   - component: {fileID: 4630529284442619780}
   - component: {fileID: 7789692110572955080}
+  - component: {fileID: 7789692110572955081}
   m_Layer: 0
   m_Name: Tomato
   m_TagString: Enemy
@@ -1272,13 +1273,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3029da458ae69448dc305f4b8a9362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
+  maxHealth: 100
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7789692110572955081}
+        m_TargetAssemblyTypeName: ItemDroper, Assembly-CSharp
+        m_MethodName: DropItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &4789440378393239295
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1713,6 +1726,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7789692110572955081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3719974005412994861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09d84ec362e7a944b2f1606fa2ad56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 4399265622181116554, guid: cbc128487273d5649ae2c14cb4b18693, type: 3}
 --- !u!114 &7791466371147092221
 MonoBehaviour:
   m_ObjectHideFlags: 0
