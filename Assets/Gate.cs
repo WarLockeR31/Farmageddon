@@ -18,7 +18,6 @@ public class Gate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Coll");
         if (other.CompareTag("Player"))
         {
             if (true) //проверка на зачищенность арены

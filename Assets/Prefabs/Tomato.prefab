@@ -124,6 +124,9 @@ MonoBehaviour:
   punchFlightTime: 1
   punchSpeed: 20
   damageAmount: 15
+  punchRecoilPower: 10
+  punchRecoilTime: 0.3
+  visionRadius: 15
 --- !u!95 &4045245983729354393
 Animator:
   serializedVersion: 5

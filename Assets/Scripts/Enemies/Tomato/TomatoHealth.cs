@@ -11,7 +11,8 @@ public class TomatoHealth : Health
     protected override void Die()
     {
         base.Die();
-        Destroy(gameObject); 
+        gameObject.SetActive(false); 
+        ArenaManager.getInstance().DecEnemyCount();
     }
 
     private void LogHealth(float healthPercent)
