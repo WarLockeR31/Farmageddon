@@ -664,7 +664,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.259726, y: -0.33826876, z: -4.695569}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 483658497}
@@ -3605,11 +3605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2271493217929537846, guid: b47517af4415e58459d298aadf10b91a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6304866796624501926, guid: b47517af4415e58459d298aadf10b91a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2402744
+      value: 3.247
       objectReference: {fileID: 0}
     - target: {fileID: 6304866796624501926, guid: b47517af4415e58459d298aadf10b91a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4076,7 +4076,7 @@ GameObject:
   - component: {fileID: 3810802782287465474}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
