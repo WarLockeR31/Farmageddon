@@ -25,7 +25,7 @@ public class PeaScript : MonoBehaviour
 
     public void Shoot()
     {
-        bullet.transform.position = transform.position;
+        bullet.transform.position = new Vector3(transform.position.x, transform.position.y+0.7f, transform.position.z);
         var obj = Instantiate(bullet);
         var scr = obj.GetComponent<Bullet>();
         scr.target = (player.transform.position - transform.position).normalized;
@@ -40,6 +40,7 @@ public class PeaScript : MonoBehaviour
         playerController = player.GetComponent<CharacterController>();
         moveDir = Vector3.zero;
         rb = GetComponent<Rigidbody>();
+        Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>());
     }
 
     private void FixedUpdate()

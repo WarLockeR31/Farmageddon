@@ -12,6 +12,8 @@ public class Bullet : Interactable
     [SerializeField]
     float activeTime;
 
+    bool isParried = false;
+
     private void Start()
     {
         StartCoroutine(DelayedDestroy());
@@ -25,11 +27,12 @@ public class Bullet : Interactable
     public override void KatanaBeat(Vector3 newTarget)
     {
         target = newTarget;
+        isParried = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Pea"))
+        if (isParried && other.CompareTag("Pea"))
         {
             other.GetComponent<Health>()?.TakeDamage(10);
         }
