@@ -9,7 +9,10 @@ public class PeaScript : MonoBehaviour
     public float Scare_range = 10f;
 
     [SerializeField]
-    public float Speed = 4f;
+    public float Speed = 20f;
+
+    [SerializeField]
+    private GameObject bullet;
 
 
     private PlayerHealth playerHealth;
@@ -20,9 +23,13 @@ public class PeaScript : MonoBehaviour
     public Vector3 moveDir;
     private Rigidbody rb;
 
-
-
-
+    public void Shoot()
+    {
+        bullet.transform.position = transform.position;
+        var obj = Instantiate(bullet);
+        var scr = obj.GetComponent<Bullet>();
+        scr.target = (player.transform.position - transform.position).normalized;
+    }
 
     void Start()
     {

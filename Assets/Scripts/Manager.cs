@@ -11,9 +11,12 @@ public class Manager : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private PlayerHealth playerHealth;
+    [SerializeField]
     public GameObject Player { get { return player; } }
+    [SerializeField]
     public PlayerHealth PlayerHealth { get { return playerHealth; } }
-
+    [SerializeField]
+    public AttackControl attackControl;
 
     public Animator animator;
 

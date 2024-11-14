@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scare_range: 15
-  Speed: 20
+  Speed: 30
   moveDir: {x: 0, y: 0, z: 0}
 --- !u!114 &8189577136846749741
 MonoBehaviour:

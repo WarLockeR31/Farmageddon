@@ -35,11 +35,10 @@ public class Pea_shoot : StateMachineBehaviour
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(Dist(player, pea) <= peaScript.Scare_range)
+        if(Vector3.Distance(player.transform.position, pea.transform.position) <= peaScript.Scare_range)
         {
             animator.SetTrigger("Run");
         }
-
     }
 
    
@@ -47,16 +46,4 @@ public class Pea_shoot : StateMachineBehaviour
     {
         animator.ResetTrigger("Run");
     }
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }
