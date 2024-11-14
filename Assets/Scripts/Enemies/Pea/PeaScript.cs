@@ -44,7 +44,7 @@ public class PeaScript : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("Wall")) return;
         var item = other.contacts[0];
-        moveDir = Quaternion.Euler(0, 180f - Vector3.Angle(item.normal, moveDir), 0) * item.normal;
+        moveDir = Vector3.Reflect(moveDir, item.normal);
         animator.SetTrigger("OffTheWall");
         Debug.Log(Vector3.Angle(item.normal, moveDir));
     }
