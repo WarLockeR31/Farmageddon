@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 4732138547098269015}
   - component: {fileID: 6464761811567047655}
   - component: {fileID: 4122110189785424924}
+  - component: {fileID: 799982624753810083}
+  - component: {fileID: 3172283943050878681}
   m_Layer: 0
   m_Name: Tomato
   m_TagString: Enemy
@@ -71,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005b004f484834842b706c6b65e4ebdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDirection: {x: 0, y: 0, z: 0}
   speed: 5
   punchFlightTime: 1
   punchSpeed: 20
@@ -156,7 +159,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &4122110189785424924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +173,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 4399265622181116554, guid: cbc128487273d5649ae2c14cb4b18693, type: 3}
+--- !u!65 &799982624753810083
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2907962966099662602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.7286716, z: 0.25702786}
+  m_Center: {x: 0, y: 0.31142527, z: 0.012691736}
+--- !u!114 &3172283943050878681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2907962966099662602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d7d89fbe66499942836334020311252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5867077053590123391
 GameObject:
   m_ObjectHideFlags: 0

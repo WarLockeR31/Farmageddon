@@ -7,6 +7,7 @@ public class Tomato : MonoBehaviour
     private GameObject player;
     private PlayerHealth playerHealth;
     private CharacterController playerController;
+    private Rigidbody rb;
 
     private Vector3 punchDirection;
     public Vector3 PunchDirection { get { return punchDirection; } }
@@ -49,17 +50,12 @@ public class Tomato : MonoBehaviour
         tomatoHealth = GetComponent<TomatoHealth>();
         playerHealth = player.GetComponent<PlayerHealth>();
         playerController = player.GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
 
         if (tomatoHealth == null)
         {
             Debug.LogError("TomatoHealth не найден на объекте Tomato");
         }
-    }
-
-    void Update()
-    {
-        Vector3 targetPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-        transform.LookAt(targetPosition);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,7 +68,8 @@ public class Tomato : MonoBehaviour
             punchDirection = (Manager.getInstance().Player.transform.rotation * Vector3.forward).normalized;
             return;
         }
-
+        
+       
         if (isPunched && other.gameObject.CompareTag("Wall"))
         {
             tomatoHealth.TakeDamage(damageAmount);

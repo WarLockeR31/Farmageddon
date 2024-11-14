@@ -17,7 +17,8 @@ public class PeaScript : MonoBehaviour
     private TomatoHealth peaHealth;
     private GameObject player;
     private CharacterController playerController;
-
+    public Vector3 moveDir;
+    private Rigidbody rb;
 
 
 
@@ -30,11 +31,21 @@ public class PeaScript : MonoBehaviour
         peaHealth = GetComponent<TomatoHealth>();
         playerHealth = player.GetComponent<PlayerHealth>();
         playerController = player.GetComponent<CharacterController>();
+        moveDir = Vector3.zero;
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
+        rb.position += moveDir * Speed * Time.fixedDeltaTime;
+    }
 
+    void OnCollisionEnter(Collision other)
+    {
+        if (!other.gameObject.CompareTag("Wall")) return;
+        var item = other.contacts[0];
+        moveDir = Quaternion.Euler(0, 180f - Vector3.Angle(item.normal, moveDir), 0) * item.normal;
+        animator.SetTrigger("OffTheWall");
+        Debug.Log(Vector3.Angle(item.normal, moveDir));
     }
 }

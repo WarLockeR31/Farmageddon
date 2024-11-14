@@ -33,7 +33,7 @@ public class TomatoRunning : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Vector3 moveDirection = (playerObj.transform.position - tomatoObj.transform.position).normalized;
-        tomatoObj.transform.position += moveDirection * tomatoScript.Speed * Time.deltaTime;
+        tomatoObj.transform.position += new Vector3(moveDirection.x, 0, moveDirection.z) * tomatoScript.Speed * Time.deltaTime;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
