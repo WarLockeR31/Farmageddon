@@ -1,0 +1,16 @@
+# Made in Blockbench 4.11.2
+newmtl m_f9fa6663-5ece-b571-8d01-9c63e96b9e70
+map_Kd texture.png
+newmtl m_3bab35ba-4f7b-4fd1-1824-75054d0b6e70
+map_Kd Body.png
+newmtl m_60cef6b4-f53f-fa3e-df89-db8ed11f33d6
+map_Kd texture.png
+newmtl m_c9d3051b-baca-72f5-bd06-f47c238cf930
+map_Kd texture.png
+newmtl m_139cdd82-ee89-7e98-bdb3-c54d522afb49
+map_Kd texture.png
+newmtl m_cd6471d4-244c-9679-b419-416f4d0453bc
+map_Kd texture.png
+newmtl m_04b7ca05-dc9b-9d41-45c3-525e8674e054
+map_Kd texture.png
+newmtl none
