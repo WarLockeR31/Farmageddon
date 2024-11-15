@@ -5,31 +5,59 @@ public class PlayerHealthUI : MonoBehaviour
 {
     [SerializeField]
     private PlayerHealth playerHealth;
-
-    private Text healthText;
+    [SerializeField]
+    private Text redHealthText;
+    [SerializeField]
+    private Text blueHealthText;
+    [SerializeField]
+    private Text yellowHealthText;
+    [SerializeField]
+    private Text greenHealthText;
 
     private void Start()
     {
-        healthText = GetComponent<Text>();
-
         if (playerHealth != null)
         {
-            playerHealth.OnHealthChanged.AddListener(UpdateHealthUI);
-            UpdateHealthUI(playerHealth.CurrentHealth / playerHealth.MaxHealth);
+            playerHealth.OnRedHealthChanged.AddListener(UpdateRedHealthUI);
+            playerHealth.OnBlueHealthChanged.AddListener(UpdateBlueHealthUI);
+            playerHealth.OnYellowHealthChanged.AddListener(UpdateYellowHealthUI);
+            playerHealth.OnGreenHealthChanged.AddListener(UpdateGreenHealthUI);
+
+            UpdateRedHealthUI(playerHealth.CurrentRedHealth / playerHealth.maxRedHealth);
+            UpdateBlueHealthUI(playerHealth.CurrentBlueHealth / playerHealth.maxOrangeHealth);
+            UpdateYellowHealthUI(playerHealth.CurrentYellowHealth / playerHealth.maxYellowHealth);
+            UpdateGreenHealthUI(playerHealth.CurrentGreenHealth / playerHealth.maxGreenHealth);
         }
     }
 
-    private void UpdateHealthUI(float healthPercent)
+    private void UpdateRedHealthUI(float healthPercent)
     {
-        int currentCells = Mathf.RoundToInt(healthPercent * 10);
-        healthText.text = $"{currentCells}/10";
+        redHealthText.text = $"Red Health: {playerHealth.CurrentRedHealth}/{playerHealth.maxRedHealth}";
+    }
+
+    private void UpdateBlueHealthUI(float healthPercent)
+    {
+        blueHealthText.text = $"Orange Health: {playerHealth.CurrentBlueHealth}/{playerHealth.maxOrangeHealth}";
+    }
+
+    private void UpdateYellowHealthUI(float healthPercent)
+    {
+        yellowHealthText.text = $"Yellow Health: {playerHealth.CurrentYellowHealth}/{playerHealth.maxYellowHealth}";
+    }
+
+    private void UpdateGreenHealthUI(float healthPercent)
+    {
+        greenHealthText.text = $"Green Health: {playerHealth.CurrentGreenHealth}/{playerHealth.maxGreenHealth}";
     }
 
     private void OnDestroy()
     {
         if (playerHealth != null)
         {
-            playerHealth.OnHealthChanged.RemoveListener(UpdateHealthUI);
+            playerHealth.OnRedHealthChanged.RemoveListener(UpdateRedHealthUI);
+            playerHealth.OnBlueHealthChanged.RemoveListener(UpdateBlueHealthUI);
+            playerHealth.OnYellowHealthChanged.RemoveListener(UpdateYellowHealthUI);
+            playerHealth.OnGreenHealthChanged.RemoveListener(UpdateGreenHealthUI);
         }
     }
 }
