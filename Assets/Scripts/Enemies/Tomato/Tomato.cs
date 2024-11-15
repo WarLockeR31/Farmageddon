@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Tomato : MonoBehaviour
+public class Tomato : Interactable
 {
     private Animator animator;
     private TomatoHealth tomatoHealth;
@@ -60,14 +60,11 @@ public class Tomato : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PlayerAttack"))
-        {
-            tomatoHealth.TakeDamage(damageAmount);
-            animator.SetTrigger("isPunched");
-            isPunched = true;
-            punchDirection = (Manager.getInstance().Player.transform.rotation * Vector3.forward).normalized;
-            return;
-        }
+        //if (other.gameObject.CompareTag("PlayerAttack"))
+        //{
+        
+        //    return;
+        //}
         
        
         if (isPunched && other.gameObject.CompareTag("Wall"))
@@ -106,5 +103,14 @@ public class Tomato : MonoBehaviour
             timer -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    public override void BatBeat(Vector3 dir)
+    {
+        base.BatBeat(dir);
+        tomatoHealth.TakeDamage(damageAmount);
+        animator.SetTrigger("isPunched");
+        isPunched = true;
+        punchDirection = dir;
     }
 }
