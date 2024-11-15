@@ -15,7 +15,7 @@ public class TomatoHealth : Health
 
     protected override void Die()
     {
-        animator.Play("Death(loh)");
+        animator.Play("loshok_death");
         base.Die();
         ArenaManager.getInstance().DecEnemyCount();
     }
