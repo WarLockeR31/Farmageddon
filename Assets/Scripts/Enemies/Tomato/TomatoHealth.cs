@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class TomatoHealth : Health
 {
+    private Animator animator;
+    private void Start()
+    {
+        animator = GetComponentInParent<Animator>();
+    }
     protected override void Awake()
     {
         base.Awake();
@@ -10,8 +15,8 @@ public class TomatoHealth : Health
 
     protected override void Die()
     {
+        animator.Play("Death(loh)");
         base.Die();
-        gameObject.SetActive(false); 
         ArenaManager.getInstance().DecEnemyCount();
     }
 
