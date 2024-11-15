@@ -13,7 +13,7 @@ public class boom : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Manager.getInstance().PlayerHealth.TakeDamage(bs.damage);
+            Manager.getInstance().PlayerHealth.TakeDamage(bs.damage, HealthType.Yellow);
         }
     }
 }

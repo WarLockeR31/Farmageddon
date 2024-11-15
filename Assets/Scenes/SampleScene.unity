@@ -1074,7 +1074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9113253146782504778, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
       propertyPath: damageAmount
-      value: 2
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9113253146782504778, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
       propertyPath: punchFlightTime

@@ -28,11 +28,4 @@ public class HealEffect : MonoBehaviour
     {
         animator.Play("YellowHeal");
     }
-
-    private void OnDestroy()
-    {
-        Manager.getInstance().PlayerHealth.OnRedHeal -= RedHeal;
-        Manager.getInstance().PlayerHealth.OnGreenHeal -= GreenHeal;
-        Manager.getInstance().PlayerHealth.OnYellowHeal -= YellowHeal;
-    }
 }

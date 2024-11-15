@@ -63,6 +63,7 @@ public class Tomato : Interactable
         if (isPunched && other.gameObject.CompareTag("Wall"))
         {
             tomatoHealth.TakeDamage(damageAmount);
+            Debug.Log(tomatoHealth.CurrentHealth);
             animator.Play("Running");
             return;
         }
@@ -72,6 +73,7 @@ public class Tomato : Interactable
             tomatoHealth.TakeDamage(damageAmount);
             animator.Play("Running");
             other.GetComponent<Health>().TakeDamage(200);
+            
             return;
         }
 

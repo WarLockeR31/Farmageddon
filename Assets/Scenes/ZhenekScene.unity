@@ -939,88 +939,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cb45ba724a996b4a8c1d7064923834e, type: 3}
---- !u!1001 &375410806
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1395380707}
-    m_Modifications:
-    - target: {fileID: 799982624753810083, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2907962966099662602, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_Name
-      value: Tomato
-      objectReference: {fileID: 0}
-    - target: {fileID: 4732138547098269015, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: maxHealth
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6725661568593628002, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865123898349919603, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 15.895001
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865123898349919603, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865123898349919603, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865123898349919603, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865123898349919603, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865123898349919603, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865123898349919603, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865123898349919603, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865123898349919603, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865123898349919603, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9113253146782504778, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9113253146782504778, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: punchFlightTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9113253146782504778, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-      propertyPath: punchRecoilPower
-      value: 15
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 799982624753810083, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
 --- !u!4 &386242276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7324798560406998866, guid: 7055384fa7b1be146b1d64bfbca1eb8b, type: 3}
@@ -3938,8 +3856,8 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2907962965728479100 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2907962966099662602, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-  m_PrefabInstance: {fileID: 375410806}
+  m_CorrespondingSourceObject: {fileID: 8871363357621303984, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+  m_PrefabInstance: {fileID: 7206725769977397901}
   m_PrefabAsset: {fileID: 0}
 --- !u!143 &2953238581573006676
 CharacterController:
@@ -4171,8 +4089,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e71c573dc277464a84075bed85f3c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  OnHealthChanged:
+  maxRedHealth: 10
+  maxYellowHealth: 10
+  maxGreenHealth: 10
+  OnRedHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnYellowHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGreenHealthChanged:
     m_PersistentCalls:
       m_Calls: []
   OnDeath:
@@ -4565,8 +4491,8 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &6865123898586909957 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6865123898349919603, guid: 2062952428cba1d48b5bf2cf42dd7ef5, type: 3}
-  m_PrefabInstance: {fileID: 375410806}
+  m_CorrespondingSourceObject: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+  m_PrefabInstance: {fileID: 7206725769977397901}
   m_PrefabAsset: {fileID: 0}
 --- !u!222 &6882215158219447966
 CanvasRenderer:
@@ -4646,6 +4572,63 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!1001 &7206725769977397901
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1395380707}
+    m_Modifications:
+    - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.895001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871363357621303984, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: m_Name
+      value: Tomato
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 977de86fe6b952c4886b21584249300e, type: 3}
 --- !u!82 &7209311506204651989
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5076,6 +5059,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 3810802782287465474}
+  redHealthText: {fileID: 0}
+  yellowHealthText: {fileID: 0}
+  greenHealthText: {fileID: 0}
 --- !u!114 &8887967113123130468
 MonoBehaviour:
   m_ObjectHideFlags: 0
