@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class HealEffect : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Animator animator;
+
+    private void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        Manager.getInstance().PlayerHealth.OnRedHeal += RedHeal;
+        Manager.getInstance().PlayerHealth.OnGreenHeal += GreenHeal;
+        Manager.getInstance().PlayerHealth.OnYellowHeal += YellowHeal;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RedHeal()
     {
-        
+        animator.Play("RedHeal");
+    }
+
+    public void GreenHeal()
+    {
+        animator.Play("GreenHeal");
+    }
+
+    public void YellowHeal()
+    {
+        animator.Play("YellowHeal");
+    }
+
+    private void OnDestroy()
+    {
+        Manager.getInstance().PlayerHealth.OnRedHeal -= RedHeal;
+        Manager.getInstance().PlayerHealth.OnGreenHeal -= GreenHeal;
+        Manager.getInstance().PlayerHealth.OnYellowHeal -= YellowHeal;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,6 +28,10 @@ public class PlayerHealth : MonoBehaviour
     public UnityEvent OnGreenHealthChanged;
     public UnityEvent OnDeath;
 
+    public Action OnRedHeal;
+    public Action OnGreenHeal;
+    public Action OnYellowHeal;
+
     private void Awake()
     {
         currentRedHealth = maxRedHealth;
@@ -42,15 +47,15 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
-            TakeDamage(1f, HealthType.Red);
+            Heal(1f, HealthType.Red);
         }
         if (Input.GetKeyDown(KeyCode.LeftBracket))
         {
-            TakeDamage(1f, HealthType.Yellow);
+            Heal(1f, HealthType.Yellow);
         }
         if (Input.GetKeyDown(KeyCode.RightBracket))
         {
-            TakeDamage(1f, HealthType.Green);
+            Heal(1f, HealthType.Green);
         }
     }
 
@@ -92,14 +97,17 @@ public class PlayerHealth : MonoBehaviour
             case HealthType.Red:
                 currentRedHealth = Mathf.Clamp(currentRedHealth + amount, 0, maxRedHealth);
                 OnRedHealthChanged?.Invoke();
+                OnRedHeal?.Invoke();
                 break;
             case HealthType.Yellow:
                 currentYellowHealth = Mathf.Clamp(currentYellowHealth + amount, 0, maxYellowHealth);
                 OnYellowHealthChanged?.Invoke();
+                OnYellowHeal?.Invoke();
                 break;
             case HealthType.Green:
                 currentGreenHealth = Mathf.Clamp(currentGreenHealth + amount, 0, maxGreenHealth);
                 OnGreenHealthChanged?.Invoke();
+                OnGreenHeal?.Invoke();
                 break;
         }
     }
