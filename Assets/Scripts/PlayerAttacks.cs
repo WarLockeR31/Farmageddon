@@ -5,16 +5,20 @@ using UnityEngine;
 
 public class PlayerAttacks : MonoBehaviour
 {
+    private PauseMenuController pauseMenuController;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        pauseMenuController = FindObjectOfType<PauseMenuController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (pauseMenuController != null && pauseMenuController.IsPaused())
+        {
+            return;
+        }
+
         if (Input.GetButtonDown("Fire1"))
         {
             Manager.getInstance().animator.SetTrigger("bat_attack");
@@ -28,7 +32,6 @@ public class PlayerAttacks : MonoBehaviour
             Manager.getInstance().animator.SetTrigger("coin");
         }
 
-        // testing intems abils
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Manager.getInstance().ActivateItem(new RedHeal());
