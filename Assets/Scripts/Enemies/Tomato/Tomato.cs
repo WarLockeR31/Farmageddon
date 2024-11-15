@@ -60,13 +60,6 @@ public class Tomato : Interactable
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.gameObject.CompareTag("PlayerAttack"))
-        //{
-        
-        //    return;
-        //}
-        
-       
         if (isPunched && other.gameObject.CompareTag("Wall"))
         {
             tomatoHealth.TakeDamage(damageAmount);

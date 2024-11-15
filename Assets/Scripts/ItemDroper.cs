@@ -8,7 +8,7 @@ public class ItemDroper : MonoBehaviour
     private GameObject item;
     public void DropItem ()
     {
-        item.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        Instantiate(item, item.transform);
+        var instanceItme = Instantiate(item);
+        instanceItme.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
     }
 }
