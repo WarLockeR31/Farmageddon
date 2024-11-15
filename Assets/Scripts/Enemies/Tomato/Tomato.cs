@@ -77,7 +77,7 @@ public class Tomato : Interactable
 
         if (other.gameObject.CompareTag("Player"))
         {
-            playerHealth.TakeDamage(damageAmount);
+            playerHealth.TakeDamage(damageAmount, HealthType.Red);
             StartCoroutine(PlayerRecoil());
             
             return;

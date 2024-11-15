@@ -8,46 +8,34 @@ public class PlayerHealthUI : MonoBehaviour
     [SerializeField]
     private Text redHealthText;
     [SerializeField]
-    private Text blueHealthText;
-    [SerializeField]
     private Text yellowHealthText;
     [SerializeField]
     private Text greenHealthText;
 
     private void Start()
     {
-        if (playerHealth != null)
-        {
             playerHealth.OnRedHealthChanged.AddListener(UpdateRedHealthUI);
-            playerHealth.OnBlueHealthChanged.AddListener(UpdateBlueHealthUI);
             playerHealth.OnYellowHealthChanged.AddListener(UpdateYellowHealthUI);
             playerHealth.OnGreenHealthChanged.AddListener(UpdateGreenHealthUI);
 
-            UpdateRedHealthUI(playerHealth.CurrentRedHealth / playerHealth.maxRedHealth);
-            UpdateBlueHealthUI(playerHealth.CurrentBlueHealth / playerHealth.maxOrangeHealth);
-            UpdateYellowHealthUI(playerHealth.CurrentYellowHealth / playerHealth.maxYellowHealth);
-            UpdateGreenHealthUI(playerHealth.CurrentGreenHealth / playerHealth.maxGreenHealth);
-        }
+            UpdateRedHealthUI();
+            UpdateYellowHealthUI();
+            UpdateGreenHealthUI();
     }
 
-    private void UpdateRedHealthUI(float healthPercent)
+    private void UpdateRedHealthUI()
     {
-        redHealthText.text = $"Red Health: {playerHealth.CurrentRedHealth}/{playerHealth.maxRedHealth}";
+        redHealthText.text = $"{playerHealth.CurrentRedHealth}";
     }
 
-    private void UpdateBlueHealthUI(float healthPercent)
+    private void UpdateYellowHealthUI()
     {
-        blueHealthText.text = $"Orange Health: {playerHealth.CurrentBlueHealth}/{playerHealth.maxOrangeHealth}";
+        yellowHealthText.text = $"{playerHealth.CurrentYellowHealth}";
     }
 
-    private void UpdateYellowHealthUI(float healthPercent)
+    private void UpdateGreenHealthUI()
     {
-        yellowHealthText.text = $"Yellow Health: {playerHealth.CurrentYellowHealth}/{playerHealth.maxYellowHealth}";
-    }
-
-    private void UpdateGreenHealthUI(float healthPercent)
-    {
-        greenHealthText.text = $"Green Health: {playerHealth.CurrentGreenHealth}/{playerHealth.maxGreenHealth}";
+        greenHealthText.text = $"{playerHealth.CurrentGreenHealth}";
     }
 
     private void OnDestroy()
@@ -55,7 +43,6 @@ public class PlayerHealthUI : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.OnRedHealthChanged.RemoveListener(UpdateRedHealthUI);
-            playerHealth.OnBlueHealthChanged.RemoveListener(UpdateBlueHealthUI);
             playerHealth.OnYellowHealthChanged.RemoveListener(UpdateYellowHealthUI);
             playerHealth.OnGreenHealthChanged.RemoveListener(UpdateGreenHealthUI);
         }
