@@ -74,11 +74,11 @@ public class Tomato : Interactable
             return;
         }
 
-        if (isPunched && other.gameObject.CompareTag("Enemy"))
+        if (isPunched && (other.gameObject.CompareTag("Enemy")||other.gameObject.CompareTag("Pea")))
         {
             tomatoHealth.TakeDamage(damageAmount);
             animator.Play("Running");
-            Debug.LogWarning("Ќаписать урон другому врагу при столкновении");
+            other.GetComponent<Health>().TakeDamage(200);
             return;
         }
 
