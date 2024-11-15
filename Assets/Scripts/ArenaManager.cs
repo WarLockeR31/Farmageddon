@@ -30,6 +30,8 @@ public class ArenaManager : MonoBehaviour
     [SerializeField]
     private List<Wave> waves = new List<Wave>();
 
+    [SerializeField]
+    private GameObject walls;
 
     private int enemyCount;
     private int curWaveIndex = 0;
@@ -37,6 +39,7 @@ public class ArenaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        walls.SetActive(false);
         for (int i = 0; i < waves.Count; i++)
         {
             List<GameObject> enemies = waves[i].enemies;
@@ -49,6 +52,7 @@ public class ArenaManager : MonoBehaviour
 
     public void StartWaves()
     {
+        walls.SetActive(true);
         StartWave(curWaveIndex);
     }
 
