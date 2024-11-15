@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Wall
   - Pea
+  - Terrain
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,9 @@ public class BatAttack : StateMachineBehaviour
 {
     private void Bat(Interactable interactable)
     {
-        interactable.BatBeat(Camera.main.transform.forward);
+        interactable.BatBeat(new Vector3(Camera.main.transform.forward.x,
+            0, 
+            Camera.main.transform.forward.z));
     }
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

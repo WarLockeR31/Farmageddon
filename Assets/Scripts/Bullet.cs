@@ -35,6 +35,11 @@ public class Bullet : Interactable
         if (isParried && other.CompareTag("Pea"))
         {
             other.GetComponent<Health>()?.TakeDamage(10);
+            DestroyObj();
+        }
+        if (other.CompareTag("Wall") || other.CompareTag("Terrain"))
+        {
+            DestroyObj();
         }
     }
 
