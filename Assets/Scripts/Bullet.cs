@@ -41,6 +41,10 @@ public class Bullet : Interactable
         {
             DestroyObj();
         }
+        if (other.CompareTag("Player"))
+        {
+            Manager.getInstance().PlayerHealth.TakeDamage(2, HealthType.Green);
+        }
     }
 
     private IEnumerator DelayedDestroy()

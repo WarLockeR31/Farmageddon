@@ -1,8 +1,8 @@
-public class RedHeal : Item
+public class GreenHeal : Item
 {
     public override void Do()
     {
         var manager = Manager.getInstance();
-        manager.PlayerHealth.Heal(2, HealthType.Red);
+        manager.PlayerHealth.Heal(2, HealthType.Green);
     }
 }
