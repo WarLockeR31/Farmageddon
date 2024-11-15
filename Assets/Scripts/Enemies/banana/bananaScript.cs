@@ -13,12 +13,15 @@ public class bananaScript : MonoBehaviour
     public float triggerDistance = 30f;
     [SerializeField]
     public float detonationRange = 3f;
+    [SerializeField]
+    public float damage = 5f;
 
+    private GameObject player;
 
-    private void OnTriggerEnter(Collider other)
+    private Health PlayerHealth;
+
+    private void Start()
     {
-        
+      
     }
-
-
 }

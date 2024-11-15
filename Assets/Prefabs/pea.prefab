@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3577657908256580691}
   m_Layer: 0
   m_Name: pea
-  m_TagString: Untagged
+  m_TagString: Pea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scare_range: 15
   Speed: 30
+  bullet: {fileID: 0}
   moveDir: {x: 0, y: 0, z: 0}
 --- !u!114 &8189577136846749741
 MonoBehaviour:

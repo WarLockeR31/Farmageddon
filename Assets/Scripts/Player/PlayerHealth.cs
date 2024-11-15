@@ -9,10 +9,10 @@ public class PlayerHealth : Health
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(1f); 
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    TakeDamage(1f); 
+        //}
     }
 
     protected override void Die()
