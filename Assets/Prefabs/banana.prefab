@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldSpeed: 10
-  newSpeed: 15
-  triggerDistance: 30
+  newSpeed: 20
+  triggerDistance: 20
   detonationRange: 2
   damage: 5
 --- !u!136 &2839734009645813115
