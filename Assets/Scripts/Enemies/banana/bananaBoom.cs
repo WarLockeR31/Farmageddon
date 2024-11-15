@@ -19,6 +19,7 @@ public class bananaBoom : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        ArenaManager.getInstance().DecEnemyCount();
         Destroy(animator.gameObject);
     }
 

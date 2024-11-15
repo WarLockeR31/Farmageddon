@@ -70,9 +70,9 @@ public class ArenaManager : MonoBehaviour
     public void DecEnemyCount()
     {
         enemyCount--;
-        curWaveIndex++;
         if (enemyCount == 0)
         {
+            curWaveIndex++;
             StartWave(curWaveIndex);
         }
     }

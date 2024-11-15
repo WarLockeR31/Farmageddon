@@ -62,16 +62,16 @@ public class Tomato : Interactable
     {
         if (isPunched && other.gameObject.CompareTag("Wall"))
         {
+            animator.Play("Running");
             tomatoHealth.TakeDamage(damageAmount);
             Debug.Log(tomatoHealth.CurrentHealth);
-            animator.Play("Running");
             return;
         }
 
         if (isPunched && (other.gameObject.CompareTag("Enemy")||other.gameObject.CompareTag("Pea")))
         {
-            tomatoHealth.TakeDamage(damageAmount);
             animator.Play("Running");
+            tomatoHealth.TakeDamage(damageAmount);
             other.GetComponent<Health>().TakeDamage(200);
             
             return;
