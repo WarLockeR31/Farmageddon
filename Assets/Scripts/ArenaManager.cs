@@ -54,13 +54,13 @@ public class ArenaManager : MonoBehaviour
 
     public void StartWaves()
     {
-        isFighting = true;
         walls.SetActive(true);
         StartWave(curWaveIndex);
     }
 
     void StartWave(int waveIndex)
     {
+        isFighting = true;
         List<GameObject> enemies = waves[waveIndex].enemies;
         enemyCount = enemies.Count;
 
@@ -76,8 +76,14 @@ public class ArenaManager : MonoBehaviour
         if (enemyCount == 0)
         {
             curWaveIndex++;
+            if (curWaveIndex == waves.Count)
+            {
+                walls.gameObject.SetActive(false);
+                isFighting = false;
+                return;
+            }
             StartWave(curWaveIndex);
-            isFighting = false;
+
         }
     }
 

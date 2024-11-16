@@ -3096,9 +3096,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 135306723}
     m_Modifications:
+    - target: {fileID: 2264580605306112046, guid: b47517af4415e58459d298aadf10b91a, type: 3}
+      propertyPath: clockWise
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264580605306112046, guid: b47517af4415e58459d298aadf10b91a, type: 3}
+      propertyPath: rotationAngle
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 2271493217929537846, guid: b47517af4415e58459d298aadf10b91a, type: 3}
       propertyPath: m_Name
       value: Fence3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805247543076792306, guid: b47517af4415e58459d298aadf10b91a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6304866796624501926, guid: b47517af4415e58459d298aadf10b91a, type: 3}
       propertyPath: m_LocalPosition.x
