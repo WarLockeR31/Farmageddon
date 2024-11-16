@@ -36,6 +36,8 @@ public class ArenaManager : MonoBehaviour
     private int enemyCount;
     private int curWaveIndex = 0;
 
+    private bool isFighting;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,7 @@ public class ArenaManager : MonoBehaviour
 
     public void StartWaves()
     {
+        isFighting = true;
         walls.SetActive(true);
         StartWave(curWaveIndex);
     }
@@ -74,11 +77,12 @@ public class ArenaManager : MonoBehaviour
         {
             curWaveIndex++;
             StartWave(curWaveIndex);
+            isFighting = false;
         }
     }
 
-    public bool IsEnded()
+    public bool IsFighting()
     {
-        return curWaveIndex == waves.Count;
+        return isFighting;
     }
 }
