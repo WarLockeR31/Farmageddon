@@ -13,6 +13,7 @@ public class TomatoHealth : Health
         base.Die();
         gameObject.SetActive(false); 
         ArenaManager.getInstance().DecEnemyCount();
+        HouseArenaManager.getInstance().DecEnemyCount();
     }
 
     private void LogHealth(float healthPercent)

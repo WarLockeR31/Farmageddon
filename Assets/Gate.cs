@@ -22,12 +22,15 @@ public class Gate : MonoBehaviour
     [SerializeField]
     private bool clockWise = true;
 
+    [SerializeField]
+    private bool isWaveArena;
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (true) //проверка на зачищенность арены
+            if (isWaveArena && ArenaManager.getInstance().IsEnded() || !isWaveArena && !HouseArenaManager.getInstance().IsFighting())
             {
                 if (!isOpened)
                     Open();
@@ -52,5 +55,10 @@ public class Gate : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    public void Close()
+    {
+        pivot.transform.rotation = Quaternion.Euler(pivot.rotation.eulerAngles.x, startRotationY, pivot.rotation.eulerAngles.z);
     }
 }
