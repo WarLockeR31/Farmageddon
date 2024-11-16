@@ -18,6 +18,7 @@ public class TomatoHealth : Health
         animator.Play("loshok_death");
         base.Die();
         ArenaManager.getInstance().DecEnemyCount();
+        HouseArenaManager.getInstance().DecEnemyCount();
     }
 
     private void LogHealth(float healthPercent)

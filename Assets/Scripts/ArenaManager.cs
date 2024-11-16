@@ -76,4 +76,9 @@ public class ArenaManager : MonoBehaviour
             StartWave(curWaveIndex);
         }
     }
+
+    public bool IsEnded()
+    {
+        return curWaveIndex == waves.Count;
+    }
 }

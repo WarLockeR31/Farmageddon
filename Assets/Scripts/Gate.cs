@@ -11,16 +11,26 @@ public class Gate : MonoBehaviour
     private float rotateSpeed;
 
     [SerializeField]
+    private float rotationAngle;
+
+    [SerializeField]
     private Transform pivot;
 
     private float startRotationY;
     private float targetRotationY;
 
+    [SerializeField]
+    private bool clockWise = true;
+
+    [SerializeField]
+    private bool isWaveArena;
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (true) //проверка на зачищенность арены
+            if (isWaveArena && ArenaManager.getInstance().IsEnded() || !isWaveArena && !HouseArenaManager.getInstance().IsFighting())
             {
                 if (!isOpened)
                     Open();
@@ -31,19 +41,24 @@ public class Gate : MonoBehaviour
     void Open()
     {
         isOpened = true;
-        StartCoroutine(Opening());
+        StartCoroutine(OpeningY());
     }
 
-    System.Collections.IEnumerator Opening()
+    System.Collections.IEnumerator OpeningY()
     {
         startRotationY = pivot.rotation.eulerAngles.y;
-        targetRotationY = startRotationY + 135f;
+        targetRotationY = startRotationY + (clockWise ? rotationAngle : -rotationAngle);
 
-        while (pivot.rotation.eulerAngles.y < targetRotationY)
+        while (!(pivot.rotation.eulerAngles.y < targetRotationY + 1f && pivot.rotation.eulerAngles.y > targetRotationY - 1f))
         {
-            pivot.Rotate(new Vector3(0f, rotateSpeed * Time.deltaTime, 0f));
+            pivot.Rotate(new Vector3(0f, (clockWise ? rotateSpeed : -rotateSpeed) * Time.deltaTime, 0f));
 
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    public void Close()
+    {
+        pivot.transform.rotation = Quaternion.Euler(pivot.rotation.eulerAngles.x, startRotationY, pivot.rotation.eulerAngles.z);
     }
 }
