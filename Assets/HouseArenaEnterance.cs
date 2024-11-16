@@ -22,7 +22,7 @@ public class HouseArenaEnterance : MonoBehaviour
             {
                 arenaManager.StartWaves();
                 gate.Close();
-                this.enabled = false;
+                gameObject.SetActive(false);
             }
         }
     }

@@ -45,6 +45,7 @@ public class HouseArenaManager : MonoBehaviour
             List<GameObject> enemies = waves[i].enemies;
             for (int j = 0; j < enemies.Count; j++)
             {
+                enemies[j].GetComponent<Animator>().enabled = false;
                 MonoBehaviour[] enemieScripts = enemies[j].GetComponents<MonoBehaviour>();
                 foreach (MonoBehaviour enemy in enemieScripts)
                 {
@@ -67,11 +68,13 @@ public class HouseArenaManager : MonoBehaviour
 
     void StartWave(int waveIndex)
     {
+        isFighting = true;
         List<GameObject> enemies = waves[waveIndex].enemies;
         enemyCount = enemies.Count;
 
         for (int i = 0; i < enemyCount; i++)
         {
+            enemies[i].GetComponent<Animator>().enabled = true;
             MonoBehaviour[] enemieScripts = enemies[i].GetComponents<MonoBehaviour>();
             foreach (MonoBehaviour enemy in enemieScripts)
             {

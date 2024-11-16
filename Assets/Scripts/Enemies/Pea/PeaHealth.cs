@@ -18,5 +18,7 @@ public class PeaHealth : Health
     {
         base.Die();
         Destroy(gameObject);
+        HouseArenaManager.getInstance().DecEnemyCount();
+        ArenaManager.getInstance().DecEnemyCount();
     }
 }
