@@ -36,6 +36,8 @@ public class ArenaManager : MonoBehaviour
     private int enemyCount;
     private int curWaveIndex = 0;
 
+    private bool isFighting;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,7 @@ public class ArenaManager : MonoBehaviour
 
     void StartWave(int waveIndex)
     {
+        isFighting = true;
         List<GameObject> enemies = waves[waveIndex].enemies;
         enemyCount = enemies.Count;
 
@@ -73,12 +76,19 @@ public class ArenaManager : MonoBehaviour
         if (enemyCount == 0)
         {
             curWaveIndex++;
+            if (curWaveIndex == waves.Count)
+            {
+                walls.gameObject.SetActive(false);
+                isFighting = false;
+                return;
+            }
             StartWave(curWaveIndex);
+
         }
     }
 
-    public bool IsEnded()
+    public bool IsFighting()
     {
-        return curWaveIndex == waves.Count;
+        return isFighting;
     }
 }

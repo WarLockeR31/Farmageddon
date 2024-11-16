@@ -69,7 +69,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   rotateSpeed: 100
+  rotationAngle: 0
   pivot: {fileID: 8933932162247462984}
+  clockWise: 1
+  isWaveArena: 0
 --- !u!1 &2487711385432742333
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +180,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 21d68af4e9f5ec54f8e9fa88494d67ac, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.63529414, g: 0.63529414, b: 0.63529414, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
