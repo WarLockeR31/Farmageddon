@@ -22,15 +22,15 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 2054113846, guid: 7ebb5946001279a4fa11598cfce8a27f, type: 3}
-    - time: 0.11666667
+    - time: 0.05
       value: {fileID: -582790013, guid: 7ebb5946001279a4fa11598cfce8a27f, type: 3}
-    - time: 0.23333333
+    - time: 0.1
       value: {fileID: -1008971262, guid: 7ebb5946001279a4fa11598cfce8a27f, type: 3}
-    - time: 0.36666667
+    - time: 0.15
       value: {fileID: -1977681825, guid: 7ebb5946001279a4fa11598cfce8a27f, type: 3}
-    - time: 0.5833333
+    - time: 0.25
       value: {fileID: 1885574203, guid: 7ebb5946001279a4fa11598cfce8a27f, type: 3}
-    - time: 0.78333336
+    - time: 0.33333334
       value: {fileID: 1885574203, guid: 7ebb5946001279a4fa11598cfce8a27f, type: 3}
     attribute: m_Sprite
     path: Canvas/Hands
@@ -65,7 +65,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8
+    m_StopTime: 0.35000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
