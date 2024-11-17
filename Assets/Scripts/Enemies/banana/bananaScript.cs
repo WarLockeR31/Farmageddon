@@ -20,6 +20,13 @@ public class bananaScript : MonoBehaviour
 
     private Health PlayerHealth;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            GetComponent<Animator>().SetTrigger("boom");
+        }
+    }
     private void Start()
     {
       

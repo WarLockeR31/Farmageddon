@@ -32,13 +32,13 @@ public class PlayerAttacks : MonoBehaviour
             Manager.getInstance().animator.SetTrigger("coin");
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Manager.getInstance().ActivateItem(new RedHeal());
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Manager.getInstance().ActivateItem(new SpeedUp());
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftShift))
+        //{
+        //    Manager.getInstance().ActivateItem(new RedHeal());
+        //}
+        //if (Input.GetKeyDown(KeyCode.X))
+        //{
+        //    Manager.getInstance().ActivateItem(new SpeedUp());
+        //}
     }
 }
