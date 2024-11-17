@@ -105,6 +105,7 @@ public class Tomato : Interactable
         base.BatBeat(dir);
         tomatoHealth.TakeDamage(damageAmount);
         animator.SetTrigger("isPunched");
+        Manager.getInstance().PlayerSounds.batHit.Play();
         isPunched = true;
         punchDirection = dir;
     }

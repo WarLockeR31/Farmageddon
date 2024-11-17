@@ -11,6 +11,7 @@ public class KatanaAttack : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Manager.getInstance().attackControl.attack += Katana;
+        Manager.getInstance().PlayerSounds.katanaStart.Play();
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

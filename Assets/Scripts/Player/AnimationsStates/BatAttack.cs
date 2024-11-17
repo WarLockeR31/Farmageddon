@@ -14,6 +14,7 @@ public class BatAttack : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Manager.getInstance().attackControl.attack += Bat;
+        Manager.getInstance().PlayerSounds.batStart.Play();
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

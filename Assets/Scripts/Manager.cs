@@ -11,10 +11,14 @@ public class Manager : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private PlayerHealth playerHealth;
-    [SerializeField]
+
+    private PlayerSounds playerSounds;
+    public PlayerSounds PlayerSounds { get { return playerSounds; } }
+
     public GameObject Player { get { return player; } }
-    [SerializeField]
     public PlayerHealth PlayerHealth { get { return playerHealth; } }
+
+
     [SerializeField]
     public AttackControl attackControl;
 
@@ -31,6 +35,11 @@ public class Manager : MonoBehaviour
             instance = new Manager();
         }
         return instance;
+    }
+
+    private void Start()
+    {
+        playerSounds = Player.GetComponent<PlayerSounds>();
     }
 
     // Item System

@@ -14,12 +14,9 @@ public class CoinThrow : MonoBehaviour
     public float arcHeight;
     public float coinLifetime; 
 
-    void Update()
+    public void LaunchCoin()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            StartCoroutine(ThrowCoinWithDelay());
-        }
+        StartCoroutine(ThrowCoinWithDelay());
     }
 
     IEnumerator ThrowCoinWithDelay()
