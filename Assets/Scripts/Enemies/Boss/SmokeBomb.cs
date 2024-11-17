@@ -51,7 +51,7 @@ public class SmokeBomb : StateMachineBehaviour
                     teleportDistance = 5f;
                     break;
                 case 2: animator.SetTrigger("Shoot");
-                    teleportDistance = 15f;
+                    teleportDistance = 20f;
                     break;
                 case 3: animator.SetTrigger("Slash");
                     teleportDistance = 10f;
