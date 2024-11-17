@@ -99,6 +99,7 @@ MonoBehaviour:
   Speed: 30
   bullet: {fileID: 6792854662547533444, guid: d593afbcf0ac4804980003b485db7e06, type: 3}
   moveDir: {x: 0, y: 0, z: 0}
+  isDead: 0
 --- !u!114 &8189577136846749741
 MonoBehaviour:
   m_ObjectHideFlags: 0
