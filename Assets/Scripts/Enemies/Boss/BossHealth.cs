@@ -20,9 +20,8 @@ public class BossHealth : Health
     }
     protected override void Die()
     {
-        //animator.Play("loshok_death");
+        animator.Play("BossDeath");
         base.Die();
-        Destroy(gameObject);
         ArenaManager.getInstance().DecEnemyCount();
         HouseArenaManager.getInstance().DecEnemyCount();
     }

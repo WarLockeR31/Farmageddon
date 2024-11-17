@@ -55,6 +55,7 @@ public class PeaScript : MonoBehaviour
         if (isDead) return;
         isDead = true;
         ArenaManager.getInstance().DecEnemyCount();
+        HouseArenaManager.getInstance().DecEnemyCount();
         animator.Play("Pea_death", 0, 0);
 
         rb.velocity = Vector3.zero;

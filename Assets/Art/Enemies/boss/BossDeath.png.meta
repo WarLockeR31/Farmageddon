@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff1242afa69e64f4bb17aeea5d57d946
+guid: 447fc7e722f35cb48906498fec62b888
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -97,22 +97,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button1_0
+      name: BossDeath_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 199
-        width: 432
-        height: 136
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 1500
+        width: 1500
+        height: 1500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69a548b39b5242e4aab36d6eab82b339
-      internalID: -194101081
+      spriteID: f741ac7a52ceeca4c853bb9b324af1b4
+      internalID: -744291063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossDeath_1
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1500
+        width: 1500
+        height: 1500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc532651d35f2314f9bfa3be9743cc07
+      internalID: 1660361779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossDeath_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1500
+        height: 1500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11cab75296b4e114ca5bdadb661029ab
+      internalID: 2097502478
       vertices: []
       indices: 
       edges: []
@@ -120,7 +162,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 5d4888e438ab8fb418897bc0a3abe0d8
     internalID: 0
     vertices: []
     indices: 
@@ -128,7 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      button1_0: -194101081
+      BossDeath_0: -744291063
+      BossDeath_1: 1660361779
+      BossDeath_2: 2097502478
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
