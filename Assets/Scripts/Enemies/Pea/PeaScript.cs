@@ -23,6 +23,8 @@ public class PeaScript : MonoBehaviour
     public Vector3 moveDir;
     private Rigidbody rb;
 
+    private float startPosY;
+
     public void Shoot()
     {
         bullet.transform.position = new Vector3(transform.position.x, transform.position.y+0.7f, transform.position.z);
@@ -33,6 +35,7 @@ public class PeaScript : MonoBehaviour
 
     void Start()
     {
+        startPosY = transform.position.y;
         player = Manager.getInstance().Player;
         animator = GetComponent<Animator>();
         peaHealth = GetComponent<TomatoHealth>();
@@ -45,7 +48,8 @@ public class PeaScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.position += moveDir * Speed * Time.fixedDeltaTime;
+        transform.position += new Vector3(moveDir.x, 0, moveDir.z) * Speed * Time.fixedDeltaTime;
+        transform.position = new Vector3(transform.position.x, startPosY, transform.position.z);
     }
 
     void OnCollisionEnter(Collision other)

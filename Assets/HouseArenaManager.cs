@@ -31,6 +31,8 @@ public class HouseArenaManager : MonoBehaviour
     [SerializeField]
     private List<Wave> waves = new List<Wave>();
 
+    [SerializeField]
+    private GameObject nextScene;
 
     private int enemyCount;
     private int curWaveIndex = 0;
@@ -101,8 +103,12 @@ public class HouseArenaManager : MonoBehaviour
                 walls[j].SetActive(false);
             }
             curWaveIndex++;
+
+            if (curWaveIndex == waves.Count)
+            {
+                nextScene.SetActive(true);
+            }
         }
-        
     }
 
     public bool IsFighting()
