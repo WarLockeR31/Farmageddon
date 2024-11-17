@@ -63,6 +63,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (amount < 0) return;
 
+        DamageVignette.getInstance().DamageTaken();
+
         switch (type)
         {
             case HealthType.Red:
