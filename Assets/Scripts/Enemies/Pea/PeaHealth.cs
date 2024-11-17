@@ -1,24 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PeaHealth : Health
 {
-    public override void Heal(float amount)
+    private PeaScript peaScript;
+
+    private void Start()
     {
-        base.Heal(amount);
+        peaScript = GetComponent<PeaScript>();
     }
 
     public override void TakeDamage(float amount)
     {
         base.TakeDamage(amount);
-    }
+        Debug.Log($"Враг получил {amount} урона. Текущее здоровье: {CurrentHealth}");
 
-    protected override void Die()
-    {
-        base.Die();
-        Destroy(gameObject);
-        HouseArenaManager.getInstance().DecEnemyCount();
-        ArenaManager.getInstance().DecEnemyCount();
+        if (CurrentHealth <= 0)
+        {
+            Debug.Log("Враг умер.");
+            peaScript.Die(); // Вызываем метод смерти
+        }
     }
 }
