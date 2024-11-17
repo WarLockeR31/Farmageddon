@@ -30,7 +30,7 @@ public class Gate : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (isWaveArena && ArenaManager.getInstance().IsEnded() || !isWaveArena && !HouseArenaManager.getInstance().IsFighting())
+            if (isWaveArena && !ArenaManager.getInstance().IsFighting() || !isWaveArena && !HouseArenaManager.getInstance().IsFighting())
             {
                 if (!isOpened)
                     Open();
@@ -49,7 +49,7 @@ public class Gate : MonoBehaviour
         startRotationY = pivot.rotation.eulerAngles.y;
         targetRotationY = startRotationY + (clockWise ? rotationAngle : -rotationAngle);
 
-        while (!(pivot.rotation.eulerAngles.y < targetRotationY + 1f && pivot.rotation.eulerAngles.y > targetRotationY - 1f))
+        while (!(pivot.rotation.eulerAngles.y < targetRotationY + 2f && pivot.rotation.eulerAngles.y > targetRotationY - 2f))
         {
             pivot.Rotate(new Vector3(0f, (clockWise ? rotateSpeed : -rotateSpeed) * Time.deltaTime, 0f));
 
@@ -59,6 +59,7 @@ public class Gate : MonoBehaviour
 
     public void Close()
     {
+        StopAllCoroutines();
         pivot.transform.rotation = Quaternion.Euler(pivot.rotation.eulerAngles.x, startRotationY, pivot.rotation.eulerAngles.z);
     }
 }

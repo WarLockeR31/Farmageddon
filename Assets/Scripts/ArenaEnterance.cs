@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ArenaEnterance : MonoBehaviour
 {
+    [SerializeField]
+    private Gate gate;
+
     private ArenaManager arenaManager;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,8 @@ public class ArenaEnterance : MonoBehaviour
             if (true) //проверка на зачищенность арены
             {
                 arenaManager.StartWaves();
+                gate.Close();
+                gameObject.SetActive(false);
             }
         }
     }
