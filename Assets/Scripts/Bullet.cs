@@ -26,6 +26,7 @@ public class Bullet : Interactable
     public override void KatanaBeat(Vector3 newTarget)
     {
         target = newTarget;
+        Manager.getInstance().PlayerSounds.katanaHit.Play();
         isParried = true;
     }
 

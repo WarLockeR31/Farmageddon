@@ -21,6 +21,7 @@ public class AlternateMusic : MonoBehaviour
 
     void Update()
     {
+        transform.position = Manager.getInstance().Player.transform.position;
         if (!currentSource.isPlaying)
         {
             currentSource = (currentSource == musicSource1) ? musicSource2 : musicSource1;

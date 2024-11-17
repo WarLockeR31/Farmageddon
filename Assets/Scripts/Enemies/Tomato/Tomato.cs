@@ -8,6 +8,7 @@ public class Tomato : Interactable
     private PlayerHealth playerHealth;
     private CharacterController playerController;
     private Rigidbody rb;
+    private AudioSource audioSource;
 
     private Vector3 punchDirection;
     public Vector3 PunchDirection { get { return punchDirection; } }
@@ -45,6 +46,7 @@ public class Tomato : Interactable
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         player = Manager.getInstance().Player;
         animator = GetComponent<Animator>();
         tomatoHealth = GetComponent<TomatoHealth>();
@@ -65,6 +67,7 @@ public class Tomato : Interactable
             animator.Play("Running");
             tomatoHealth.TakeDamage(damageAmount);
             Debug.Log(tomatoHealth.CurrentHealth);
+            audioSource.Stop();
             return;
         }
 
@@ -72,8 +75,8 @@ public class Tomato : Interactable
         {
             animator.Play("Running");
             tomatoHealth.TakeDamage(damageAmount);
-            other.GetComponent<Health>().TakeDamage(2);
-            
+            other.GetComponent<Health>().TakeDamage(200);
+            audioSource.Stop();
             return;
         }
 
@@ -106,6 +109,7 @@ public class Tomato : Interactable
         tomatoHealth.TakeDamage(damageAmount);
         animator.SetTrigger("isPunched");
         Manager.getInstance().PlayerSounds.batHit.Play();
+        audioSource.Play();
         isPunched = true;
         punchDirection = dir;
     }
