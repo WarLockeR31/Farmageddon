@@ -17,6 +17,9 @@ public class DamageVignette : MonoBehaviour
     PostProcessVolume _volume;
     Vignette _vignette;
 
+    [SerializeField]
+    private Shake shake;
+    public Shake Shake { get { return shake; } }
 
     private static DamageVignette instance;
     private void Awake()
@@ -52,6 +55,7 @@ public class DamageVignette : MonoBehaviour
 
     public void DamageTaken()
     {
+        StopAllCoroutines();
         StartCoroutine(TakeDamageEffect());
     }
 

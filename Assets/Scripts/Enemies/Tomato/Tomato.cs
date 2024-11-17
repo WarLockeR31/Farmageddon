@@ -92,7 +92,8 @@ public class Tomato : Interactable
     System.Collections.IEnumerator PlayerRecoil()
     {
         float timer = punchRecoilTime;
-        Vector3 recoilDirection = (player.transform.position - transform.position).normalized;
+        Vector3 recoilDirection = (player.transform.position - transform.position);
+        recoilDirection = new Vector3(recoilDirection.x, 0, recoilDirection.z).normalized;
 
         while (timer > 0)
         {

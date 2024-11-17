@@ -64,6 +64,7 @@ public class PlayerHealth : MonoBehaviour
         if (amount < 0) return;
 
         DamageVignette.getInstance().DamageTaken();
+        DamageVignette.getInstance().Shake.StartShake();
 
         switch (type)
         {
