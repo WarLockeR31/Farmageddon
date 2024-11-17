@@ -37,10 +37,11 @@ public class PeaScript : MonoBehaviour
     {
         if (isDead) return;
 
-        bullet.transform.position = new Vector3(transform.position.x, transform.position.y + 0.7f, transform.position.z);
-        var obj = Instantiate(bullet);
+        Vector3 bul_pos = new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z);
+        var obj = Instantiate(bullet, bul_pos, Quaternion.identity);
+        
         var scr = obj.GetComponent<Bullet>();
-        scr.target = (Manager.getInstance().Player.transform.position - transform.position).normalized;
+        scr.target = (Manager.getInstance().Player.transform.position - bul_pos).normalized;
     }
 
     public void Die()
@@ -61,5 +62,14 @@ public class PeaScript : MonoBehaviour
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         animator.enabled = false;
         Destroy(gameObject);
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (!other.gameObject.CompareTag("Wall")) return;
+        var item = other.contacts[0];
+        moveDir = Vector3.Reflect(moveDir, item.normal);
+        animator.SetTrigger("OffTheWall");
+        Debug.Log(Vector3.Angle(item.normal, moveDir));
     }
 }
