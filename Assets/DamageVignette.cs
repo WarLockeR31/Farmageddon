@@ -50,14 +50,6 @@ public class DamageVignette : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(TakeDamageEffect());
-        }
-    }
-
     public void DamageTaken()
     {
         StartCoroutine(TakeDamageEffect());

@@ -38,9 +38,13 @@ public class ArenaManager : MonoBehaviour
 
     private bool isFighting;
 
+    [SerializeField]
+    private Collider exit;
+
     // Start is called before the first frame update
     void Start()
     {
+        exit.enabled = false;  
         walls.SetActive(false);
         for (int i = 0; i < waves.Count; i++)
         {
@@ -80,6 +84,7 @@ public class ArenaManager : MonoBehaviour
             {
                 walls.gameObject.SetActive(false);
                 isFighting = false;
+                exit.enabled = true;
                 return;
             }
             StartWave(curWaveIndex);

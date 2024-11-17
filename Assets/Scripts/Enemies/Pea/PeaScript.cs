@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections; // Äëÿ IEnumerator
 using UnityEngine;
 
 public class PeaScript : MonoBehaviour
 {
-
     [SerializeField]
     public float Scare_range = 10f;
 
@@ -20,42 +18,56 @@ public class PeaScript : MonoBehaviour
     [SerializeField]
     private AudioSource shotSound;
 
-    private PlayerHealth playerHealth;
     private Animator animator;
-    private TomatoHealth peaHealth;
-    private GameObject player;
-    private CharacterController playerController;
-    public Vector3 moveDir;
     private Rigidbody rb;
+    private PeaHealth peaHealth;
+    public Vector3 moveDir = Vector3.zero;
 
-    private float startPosY;
-
-    public void Shoot()
-    {
-        bullet.transform.position = new Vector3(transform.position.x, transform.position.y+0.7f, transform.position.z);
-        var obj = Instantiate(bullet);
-        shotSound.Play();
-        var scr = obj.GetComponent<Bullet>();
-        scr.target = (player.transform.position - transform.position).normalized;
-    }
+    public bool isDead = false;
 
     void Start()
     {
-        startPosY = transform.position.y;
-        player = Manager.getInstance().Player;
         animator = GetComponent<Animator>();
-        peaHealth = GetComponent<TomatoHealth>();
-        playerHealth = player.GetComponent<PlayerHealth>();
-        playerController = player.GetComponent<CharacterController>();
-        moveDir = Vector3.zero;
+        peaHealth = GetComponent<PeaHealth>();
         rb = GetComponent<Rigidbody>();
-        Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>());
     }
 
     private void FixedUpdate()
     {
-        transform.position += new Vector3(moveDir.x, 0, moveDir.z) * Speed * Time.fixedDeltaTime;
-        transform.position = new Vector3(transform.position.x, startPosY, transform.position.z);
+        if (isDead) return;
+
+        rb.position += moveDir * Speed * Time.fixedDeltaTime;
+    }
+
+    public void Shoot()
+    {
+        if (isDead) return;
+
+        Vector3 bul_pos = new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z);
+        var obj = Instantiate(bullet, bul_pos, Quaternion.identity);
+        shotSound.Play();
+        var scr = obj.GetComponent<Bullet>();
+        scr.target = (Manager.getInstance().Player.transform.position - bul_pos).normalized;
+    }
+
+    public void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+        ArenaManager.getInstance().DecEnemyCount();
+        animator.Play("Pea_death", 0, 0);
+
+        rb.velocity = Vector3.zero;
+        moveDir = Vector3.zero;
+
+        StartCoroutine(DisableAnimatorAfterAnimation());
+    }
+
+    private IEnumerator DisableAnimatorAfterAnimation()
+    {
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        animator.enabled = false;
+        Destroy(gameObject);
     }
 
     void OnCollisionEnter(Collision other)
