@@ -54,7 +54,7 @@ public class SmokeBomb : StateMachineBehaviour
                     teleportDistance = 20f;
                     break;
                 case 3: animator.SetTrigger("Slash");
-                    teleportDistance = 10f;
+                    teleportDistance = 15f;
                     break;
                       
             }
@@ -65,6 +65,7 @@ public class SmokeBomb : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        bossScript.isStunned = false;
         animator.ResetTrigger("Charge");
         animator.ResetTrigger("Shoot");
         animator.ResetTrigger("Slash");

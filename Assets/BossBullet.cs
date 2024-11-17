@@ -14,6 +14,7 @@ public class BossBullet : Interactable
 
     bool isParried = false;
 
+    
     private void Start()
     {
         StartCoroutine(DelayedDestroy());
@@ -28,15 +29,19 @@ public class BossBullet : Interactable
     {
         target = newTarget;
         isParried = true;
-        speed*=6;
+        speed*=2;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (isParried && other.CompareTag("Boss"))
+        {
+            other.gameObject.GetComponent<BossHealth>()?.TakeDamage(1);
+            DestroyObj();
+        }
         if (other.CompareTag("Player"))
         {
-            Manager.getInstance().PlayerHealth.TakeDamage(5, HealthType.Red);
+            Manager.getInstance().PlayerHealth.TakeDamage(1, HealthType.Red);
         }
     }
 

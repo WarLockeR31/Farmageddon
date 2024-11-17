@@ -72,7 +72,7 @@ public class Tomato : Interactable
         {
             animator.Play("Running");
             tomatoHealth.TakeDamage(damageAmount);
-            other.GetComponent<Health>().TakeDamage(200);
+            other.GetComponent<Health>().TakeDamage(2);
             
             return;
         }

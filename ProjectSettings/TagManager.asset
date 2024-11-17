@@ -12,6 +12,7 @@ TagManager:
   - Boom
   - Coin
   - Banana
+  - Boss
   layers:
   - Default
   - TransparentFX

@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 7113660164612785832}
   - component: {fileID: 3313488097882817403}
   - component: {fileID: 4365734183800795912}
+  - component: {fileID: 5676867580443040536}
+  - component: {fileID: 5057578012023767189}
   m_Layer: 0
   m_Name: BOSS
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,6 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashSpeed: 200
   Hitbox: {fileID: 921235681635929781}
+  health: {fileID: 5057578012023767189}
   isStunned: 0
 --- !u!114 &4365734183800795912
 MonoBehaviour:
@@ -87,6 +90,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7d89fbe66499942836334020311252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &5676867580443040536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709823091004950488}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.790839, y: 12.933702, z: 1.807939}
+  m_Center: {x: 0.71472025, y: 6.4478207, z: 0.069298506}
+--- !u!114 &5057578012023767189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709823091004950488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77ff36edf7f04042848bdfb0e22d8f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &921235681635929781
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8480678681242827338}
   - component: {fileID: 2588406233672152544}
+  - component: {fileID: 3604545514553168462}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: Untagged
@@ -134,12 +178,24 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.912862, y: 6.4242954, z: 1}
-  m_Center: {x: 0.35400355, y: 0.058948994, z: 0}
+  m_Size: {x: 3.9314668, y: 6.4242954, z: 12.913586}
+  m_Center: {x: 1.4193026, y: 0.058948994, z: 4.77413}
+--- !u!114 &3604545514553168462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921235681635929781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44c6c9528111514bbf494fcbd4e6f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1422926370182910607
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +267,7 @@ Transform:
   m_GameObject: {fileID: 2658803789883315061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.65, y: 6.43, z: 0}
+  m_LocalPosition: {x: -0.31, y: 6.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

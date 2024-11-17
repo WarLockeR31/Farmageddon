@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5058621587253709728}
   - component: {fileID: -3860342254776872862}
   - component: {fileID: -4748630865583933757}
-  - component: {fileID: 683447026683983697}
+  - component: {fileID: 3516311707845117206}
+  - component: {fileID: -942230120659292810}
   m_Layer: 0
   m_Name: Slash
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8022988580124526076}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2588191, y: 0.9659258, z: 0, w: 0}
-  m_LocalPosition: {x: -1.4528378, y: 2.85, z: 108.03182}
+  m_LocalPosition: {x: 9.297415, y: 2.85, z: 6.680675}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -111,11 +112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5576f9b6d1a904c8230201a7dc8c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 25
   target: {x: 0, y: 0, z: 0}
-  activeTime: 5
---- !u!136 &683447026683983697
-CapsuleCollider:
+  activeTime: 2
+--- !u!65 &3516311707845117206
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,8 +133,33 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4986229
-  m_Height: 5.8535776
-  m_Direction: 1
-  m_Center: {x: -0.0023155212, y: -0.03622532, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 6, y: 6, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-942230120659292810
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8022988580124526076}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

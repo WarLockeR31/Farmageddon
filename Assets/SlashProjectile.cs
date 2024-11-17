@@ -33,7 +33,10 @@ public class SlashProjectile : Interactable
 
     private void OnTriggerEnter(Collider other)
     {
-
+        if (isParried&&other.gameObject.CompareTag("Boss"))
+        {
+            other.GetComponent<BossHealth>().TakeDamage(1);
+        }
         if (other.CompareTag("Player"))
         {
             Manager.getInstance().PlayerHealth.TakeDamage(1, HealthType.Green);
