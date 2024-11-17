@@ -1588,7 +1588,7 @@ Transform:
   m_GameObject: {fileID: 519935703}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9999997, z: -0, w: -0.0008368939}
-  m_LocalPosition: {x: -30.49, y: 87.14779, z: 80.48}
+  m_LocalPosition: {x: -30.24, y: 87.14779, z: 80.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1920,7 +1920,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 319697603236072373, guid: 977de86fe6b952c4886b21584249300e, type: 3}
       propertyPath: speed
-      value: 10
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 319697603236072373, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: damageAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 319697603236072373, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: visionRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558387863330663506, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: maxHealth
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2191,6 +2203,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555291070}
     m_Modifications:
+    - target: {fileID: 319697603236072373, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: speed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 319697603236072373, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: damageAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 319697603236072373, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: visionRadius
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.84
@@ -2294,11 +2318,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 319697603236072373, guid: 977de86fe6b952c4886b21584249300e, type: 3}
       propertyPath: speed
-      value: 10
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 319697603236072373, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: damageAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 319697603236072373, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: visionRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558387863330663506, guid: 977de86fe6b952c4886b21584249300e, type: 3}
+      propertyPath: maxHealth
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.352
+      value: -26.227
       objectReference: {fileID: 0}
     - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2306,7 +2342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.3
+      value: -19.425
       objectReference: {fileID: 0}
     - target: {fileID: 6585402351407939847, guid: 977de86fe6b952c4886b21584249300e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3008,6 +3044,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555291070}
     m_Modifications:
+    - target: {fileID: 1096233155137152131, guid: 43f3a3c721f035a40ae3c6f333f2889e, type: 3}
+      propertyPath: Speed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096233155137152131, guid: 43f3a3c721f035a40ae3c6f333f2889e, type: 3}
+      propertyPath: Scare_range
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2221665740990295048, guid: 43f3a3c721f035a40ae3c6f333f2889e, type: 3}
       propertyPath: m_Name
       value: pea
