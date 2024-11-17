@@ -10,6 +10,8 @@ TagManager:
   - Pea
   - Terrain
   - Boom
+  - Coin
+  - Banana
   layers:
   - Default
   - TransparentFX
