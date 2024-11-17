@@ -6914,6 +6914,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1517919044180264995, guid: 1bf46ae2810cad84cb78141bf6d64ccb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -255576328, guid: 5db3e8b7785cb6042aeb686bcbf9cb39, type: 3}
     - target: {fileID: 1765612803334010873, guid: 1bf46ae2810cad84cb78141bf6d64ccb, type: 3}
       propertyPath: shake
       value: 
@@ -6921,6 +6925,18 @@ PrefabInstance:
     - target: {fileID: 1765612803334010873, guid: 1bf46ae2810cad84cb78141bf6d64ccb, type: 3}
       propertyPath: maxIntensity
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050652149591410302, guid: 1bf46ae2810cad84cb78141bf6d64ccb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -255576328, guid: 5db3e8b7785cb6042aeb686bcbf9cb39, type: 3}
+    - target: {fileID: 5841166087654999412, guid: 1bf46ae2810cad84cb78141bf6d64ccb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -255576328, guid: 5db3e8b7785cb6042aeb686bcbf9cb39, type: 3}
+    - target: {fileID: 7267918594488926490, guid: 1bf46ae2810cad84cb78141bf6d64ccb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7651177273457466274, guid: 1bf46ae2810cad84cb78141bf6d64ccb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6965,6 +6981,10 @@ PrefabInstance:
     - target: {fileID: 8440555086869281456, guid: 1bf46ae2810cad84cb78141bf6d64ccb, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8919691906372881207, guid: 1bf46ae2810cad84cb78141bf6d64ccb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
