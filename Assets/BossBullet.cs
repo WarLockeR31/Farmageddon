@@ -41,7 +41,7 @@ public class BossBullet : Interactable
         }
         if (other.CompareTag("Player"))
         {
-            Manager.getInstance().PlayerHealth.TakeDamage(1, HealthType.Red);
+            Manager.getInstance().PlayerHealth.TakeDamage(2, HealthType.Red);
         }
     }
 
