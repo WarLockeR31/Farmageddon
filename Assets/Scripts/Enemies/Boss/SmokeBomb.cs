@@ -83,7 +83,7 @@ public class SmokeBomb : StateMachineBehaviour
                 break;
 
             case 3:
-                boss.transform.position = new Vector3(player.transform.position.x, 0, player.transform.position.z - teleportDistance);
+                boss.transform.position = new Vector3(player.transform.position.x-teleportDistance, 0, player.transform.position.z);
                 break;
 
         }
