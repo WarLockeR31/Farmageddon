@@ -97,9 +97,10 @@ GameObject:
   - component: {fileID: 2791788484640514183}
   - component: {fileID: 885558037864366404}
   - component: {fileID: 2839734009645813115}
+  - component: {fileID: 32303729508611253}
   m_Layer: 0
   m_Name: banana
-  m_TagString: Enemy
+  m_TagString: Banana
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +195,25 @@ CapsuleCollider:
   m_Height: 7.084297
   m_Direction: 1
   m_Center: {x: 0.17262578, y: 3.6232452, z: 0}
+--- !u!114 &32303729508611253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3633378459747348412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67643af52ecf05b44932ea6d66f53d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5912709669158374121
 GameObject:
   m_ObjectHideFlags: 0
