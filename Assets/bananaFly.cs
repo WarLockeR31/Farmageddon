@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -36,6 +37,10 @@ public class bananaFly : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (!bananaScr.Fly.isPlaying)
+        {
+            bananaScr.Fly.Play();
+        }
         Vector3 MoveDir = (player.transform.position - banana.transform.position).normalized;
         float distance = Vector3.Distance(player.transform.position, banana.transform.position);
         if (distance > bananaScr.triggerDistance)

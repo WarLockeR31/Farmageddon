@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class bananaScript : MonoBehaviour
 {
+    [SerializeField]
+    private AudioSource fly;
+    public AudioSource Fly { get { return fly; } }
 
+    [SerializeField]
+    private AudioSource boom;
+    public AudioSource Boom { get { return boom; } }
+
+    [SerializeField]
+    private AudioSource coinHit;
+    public AudioSource CoinHit { get { return coinHit; } }
 
     [SerializeField]
     public float oldSpeed = 10f;
@@ -20,8 +30,4 @@ public class bananaScript : MonoBehaviour
 
     private Health PlayerHealth;
 
-    private void Start()
-    {
-      
-    }
 }

@@ -8,10 +8,14 @@ public class CoinDamage : MonoBehaviour
     {
         if (other.CompareTag("Banana"))
         {
-            Health enemyHealth = other.GetComponent<Health>();
-            if (enemyHealth != null)
-                enemyHealth.TakeDamage(damageAmount);
+            bananaScript bananaScr = other.GetComponent<bananaScript>();
+            if (!bananaScr.CoinHit.isPlaying)
+                bananaScr.CoinHit.Play();
+
             Debug.Log($"Нанесено {damageAmount} урона {other.name}.");
+
+            other.GetComponent<Animator>().SetTrigger("boom");
+
             Destroy(gameObject);
         }
     }

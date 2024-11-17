@@ -14,6 +14,11 @@ public class PeaScript : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
 
+    [SerializeField]
+    private AudioSource runSound;
+    public AudioSource RunSound { get { return runSound; } }
+    [SerializeField]
+    private AudioSource shotSound;
 
     private PlayerHealth playerHealth;
     private Animator animator;
@@ -29,6 +34,7 @@ public class PeaScript : MonoBehaviour
     {
         bullet.transform.position = new Vector3(transform.position.x, transform.position.y+0.7f, transform.position.z);
         var obj = Instantiate(bullet);
+        shotSound.Play();
         var scr = obj.GetComponent<Bullet>();
         scr.target = (player.transform.position - transform.position).normalized;
     }
