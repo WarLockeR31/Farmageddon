@@ -23,7 +23,6 @@ public class SettingsController : MonoBehaviour
 
     void Start()
     {
-        // Настройка разрешений экрана
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
@@ -46,18 +45,15 @@ public class SettingsController : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
-        // Загрузка сохраненных настроек
         mouseSensitivitySlider.value = PlayerPrefs.GetFloat("MouseSensitivity", 1f);
         musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
         fullscreenToggle.isOn = Screen.fullScreen;
     }
 
-    // Методы для настроек
 
     public void SetMouseSensitivity(float sensitivity)
     {
-        // Предполагается, что есть скрипт для управления камерой или персонажем
         PlayerPrefs.SetFloat("MouseSensitivity", sensitivity);
     }
 
@@ -74,7 +70,6 @@ public class SettingsController : MonoBehaviour
 
     public void SetMusicVolume(float volume)
     {
-        // Предполагается наличие аудиомикшера или аудио менеджера
         PlayerPrefs.SetFloat("MusicVolume", volume);
     }
 
@@ -82,8 +77,6 @@ public class SettingsController : MonoBehaviour
     {
         PlayerPrefs.SetFloat("SFXVolume", volume);
     }
-
-    // Методы для переключения между меню
 
     public void OpenSettings()
     {

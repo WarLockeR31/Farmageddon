@@ -21,10 +21,8 @@ public class Settings : MonoBehaviour
 
         for (int i = 0; i < resolutions.Length; i++)
         {
-            // Форматируем refreshRate как целое число
             int refreshRate = Mathf.RoundToInt((float)resolutions[i].refreshRateRatio.numerator / resolutions[i].refreshRateRatio.denominator);
 
-            // Формируем строку разрешения
             string option = $"{resolutions[i].width}x{resolutions[i].height} @ {refreshRate}Hz";
             options.Add(option);
 
@@ -39,8 +37,6 @@ public class Settings : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
-
-        // Добавляем обработчики событий
         resolutionDropdown.onValueChanged.AddListener(SetResolution);
         fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
 

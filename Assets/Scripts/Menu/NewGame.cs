@@ -6,6 +6,6 @@ public class NewGame : MonoBehaviour
     public void StartNewGame()
     {
         Time.timeScale = 1f; 
-        SceneManager.LoadScene("Scene");
+        SceneManager.LoadScene("SampleScene");
     }
 }
