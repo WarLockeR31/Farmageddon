@@ -65,6 +65,7 @@ public class SmokeBomb : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        BossSounds.getInstance().smoke.Play();
         bossScript.isStunned = false;
         animator.ResetTrigger("Charge");
         animator.ResetTrigger("Shoot");
@@ -87,6 +88,7 @@ public class SmokeBomb : StateMachineBehaviour
                 break;
 
         }
+        
     } 
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

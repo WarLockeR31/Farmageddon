@@ -26,6 +26,8 @@ public class Charge : StateMachineBehaviour
             bossScript = boss.GetComponent<Boss>();
         }
         bossScript.isStunned = false;
+
+        BossSounds.getInstance().charge.Play();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
