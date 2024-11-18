@@ -48,7 +48,7 @@ public class SmokeBomb : StateMachineBehaviour
             switch(randomAttack)
             {
                 case 1: animator.SetTrigger("Charge");
-                    teleportDistance = 5f;
+                    teleportDistance = 3f;
                     break;
                 case 2: animator.SetTrigger("Shoot");
                     teleportDistance = 20f;

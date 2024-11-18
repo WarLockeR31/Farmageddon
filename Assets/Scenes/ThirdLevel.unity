@@ -1654,7 +1654,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3ed4d0c65f7143344a3b79ac83f069b9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.331
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1750,7 +1750,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 38e0def16fd239a4fb037fcd8840be2a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.625
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1942,7 +1942,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4d66d6e86b086884c92e01d6cbf1bd06, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.134
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4863,17 +4863,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOSS
       objectReference: {fileID: 0}
+    - target: {fileID: 5057578012023767189, guid: 4547a44fe0521b649be0286de811c2cc, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6454119243228073467, guid: 4547a44fe0521b649be0286de811c2cc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6454119243228073467, guid: 4547a44fe0521b649be0286de811c2cc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6454119243228073467, guid: 4547a44fe0521b649be0286de811c2cc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6454119243228073467, guid: 4547a44fe0521b649be0286de811c2cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4914,6 +4918,10 @@ PrefabInstance:
     - target: {fileID: 6454119243228073467, guid: 4547a44fe0521b649be0286de811c2cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6454119243228073467, guid: 4547a44fe0521b649be0286de811c2cc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
