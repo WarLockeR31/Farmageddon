@@ -1763,9 +1763,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4037737218223085022, guid: ae65758056242514db53772d44bf57a8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108640678316995514, guid: ae65758056242514db53772d44bf57a8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427062724150402438, guid: ae65758056242514db53772d44bf57a8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427062724150402438, guid: ae65758056242514db53772d44bf57a8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427062724150402438, guid: ae65758056242514db53772d44bf57a8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 223.2133
+      objectReference: {fileID: 0}
     - target: {fileID: 4518708698798410597, guid: ae65758056242514db53772d44bf57a8, type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399834694269984214, guid: ae65758056242514db53772d44bf57a8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093579141805501769, guid: ae65758056242514db53772d44bf57a8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7645770115892115744, guid: ae65758056242514db53772d44bf57a8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7873175008181557917, guid: ae65758056242514db53772d44bf57a8, type: 3}
       propertyPath: musicSources.Array.data[0]
