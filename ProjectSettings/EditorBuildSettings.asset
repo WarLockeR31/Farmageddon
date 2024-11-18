@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThirdLevel.unity
     guid: 61a84c20986fc2247a32e0dbd340b4fb
+  - enabled: 1
+    path: Assets/Scenes/WarLocker.unity
+    guid: b011a848ea946394f949ce59331369b6
   m_configObjects: {}
