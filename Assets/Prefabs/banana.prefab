@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 4441162798418444894}
   - component: {fileID: 3161315878179852118}
   - component: {fileID: 4663487668399177320}
+  - component: {fileID: 7412900789444624871}
   m_Layer: 0
   m_Name: banana
   m_TagString: Banana
@@ -177,7 +178,7 @@ MonoBehaviour:
   newSpeed: 20
   triggerDistance: 20
   detonationRange: 2
-  damage: 5
+  damage: 1
 --- !u!136 &2839734009645813115
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -219,7 +220,19 @@ MonoBehaviour:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7412900789444624871}
+        m_TargetAssemblyTypeName: ItemDroper, Assembly-CSharp
+        m_MethodName: DropItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &4441162798418444894
 AudioSource:
   m_ObjectHideFlags: 0
@@ -508,6 +521,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7412900789444624871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3633378459747348412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09d84ec362e7a944b2f1606fa2ad56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 4399265622181116554, guid: 9f2f300e7eb087b47be1a73e27d4e20e, type: 3}
 --- !u!1 &5912709669158374121
 GameObject:
   m_ObjectHideFlags: 0

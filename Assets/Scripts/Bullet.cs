@@ -39,7 +39,7 @@ public class Bullet : Interactable
             var health = other.GetComponent<Health>();
             if (health != null)
             {
-                health.TakeDamage(10);
+                health.TakeDamage(1);
                 Debug.Log($"Пуля нанесла 10 урона врагу: {other.name}. Текущее здоровье: {health.CurrentHealth}");
                 hasDealtDamage = true;
             }
@@ -53,7 +53,7 @@ public class Bullet : Interactable
 
         if (other.CompareTag("Player"))
         {
-            Manager.getInstance().PlayerHealth.TakeDamage(2, HealthType.Green);
+            Manager.getInstance().PlayerHealth.TakeDamage(1, HealthType.Green);
             hasDealtDamage = true;
             DestroyObj();
         }

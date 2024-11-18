@@ -9,9 +9,9 @@ public class HealEffect : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        Manager.getInstance().PlayerHealth.OnRedHeal += RedHeal;
-        Manager.getInstance().PlayerHealth.OnGreenHeal += GreenHeal;
-        Manager.getInstance().PlayerHealth.OnYellowHeal += YellowHeal;
+        Manager.getInstance().PlayerHealth.OnRedHeal.AddListener(RedHeal);
+        Manager.getInstance().PlayerHealth.OnGreenHeal.AddListener(GreenHeal);
+        Manager.getInstance().PlayerHealth.OnYellowHeal.AddListener(YellowHeal);
     }
 
     public void RedHeal()

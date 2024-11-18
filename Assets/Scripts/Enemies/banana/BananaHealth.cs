@@ -6,6 +6,7 @@ public class BananaHealth : Health
     {
         base.Die();
         ArenaManager.getInstance().DecEnemyCount();
-        Destroy(gameObject); 
+        GetComponent<ItemDroper>().DropItem();
+        gameObject.SetActive(false); 
     }
 }

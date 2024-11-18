@@ -24,9 +24,9 @@ public class PlayerHealth : MonoBehaviour
     public float CurrentYellowHealth => currentYellowHealth;
     public float CurrentGreenHealth => currentGreenHealth;
 
-    public Action OnRedHeal;
-    public Action OnGreenHeal;
-    public Action OnYellowHeal;
+    public UnityEvent OnRedHeal;
+    public UnityEvent OnGreenHeal;
+    public UnityEvent OnYellowHeal;
     public UnityEvent OnRedHealthChanged;
     public UnityEvent OnYellowHealthChanged;
     public UnityEvent OnGreenHealthChanged;
@@ -54,37 +54,42 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            Heal(1f, HealthType.Red);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftBracket))
-        {
-            Heal(1f, HealthType.Yellow);
-        }
-        if (Input.GetKeyDown(KeyCode.RightBracket))
-        {
-            Heal(1f, HealthType.Green);
-        }
+        //if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    Heal(1f, HealthType.Red);
+        //}
+        //if (Input.GetKeyDown(KeyCode.LeftBracket))
+        //{
+        //    Heal(1f, HealthType.Yellow);
+        //}
+        //if (Input.GetKeyDown(KeyCode.RightBracket))
+        //{
+        //    Heal(1f, HealthType.Green);
+        //}
     }
 
     public void TakeDamage(float amount, HealthType type)
     {
         if (amount < 0) return;
 
+        DamageVignette.getInstance().DamageTaken();
+        DamageVignette.getInstance().Shake.StartShake();
+
         switch (type)
         {
             case HealthType.Red:
                 currentRedHealth = Mathf.Clamp(currentRedHealth - amount, 0, maxRedHealth);
                 OnRedHealthChanged?.Invoke();
+                
                 break;
             case HealthType.Yellow:
                 currentYellowHealth = Mathf.Clamp(currentYellowHealth - amount, 0, maxYellowHealth);
                 OnYellowHealthChanged?.Invoke();
+                
                 break;
             case HealthType.Green:
                 currentGreenHealth = Mathf.Clamp(currentGreenHealth - amount, 0, maxGreenHealth);
-                OnGreenHealthChanged?.Invoke();
+               
                 break;
         }
         CheckForDeath();
@@ -106,14 +111,17 @@ public class PlayerHealth : MonoBehaviour
             case HealthType.Red:
                 currentRedHealth = Mathf.Clamp(currentRedHealth + amount, 0, maxRedHealth);
                 OnRedHealthChanged?.Invoke();
+                OnRedHeal?.Invoke();
                 break;
             case HealthType.Yellow:
                 currentYellowHealth = Mathf.Clamp(currentYellowHealth + amount, 0, maxYellowHealth);
                 OnYellowHealthChanged?.Invoke();
+                OnYellowHeal?.Invoke();
                 break;
             case HealthType.Green:
                 currentGreenHealth = Mathf.Clamp(currentGreenHealth + amount, 0, maxGreenHealth);
                 OnGreenHealthChanged?.Invoke();
+                OnGreenHeal?.Invoke();
                 break;
         }
     }

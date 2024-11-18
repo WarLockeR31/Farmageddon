@@ -16,6 +16,7 @@ public class CoinDamage : MonoBehaviour
 
             other.GetComponent<Animator>().SetTrigger("boom");
 
+            other.GetComponent<ItemDroper>().DropItem();
             Destroy(gameObject);
         }
     }

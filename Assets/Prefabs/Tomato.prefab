@@ -160,10 +160,10 @@ MonoBehaviour:
   speed: 15
   punchFlightTime: 1
   punchSpeed: 20
-  damageAmount: 15
-  punchRecoilPower: 15
+  damageAmount: 1
+  punchRecoilPower: 20
   punchRecoilTime: 0.3
-  visionRadius: 10
+  visionRadius: 20
 --- !u!95 &270976308619443632
 Animator:
   serializedVersion: 5
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3029da458ae69448dc305f4b8a9362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
+  maxHealth: 6
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []

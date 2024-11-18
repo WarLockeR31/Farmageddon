@@ -22,11 +22,15 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -1325513275, guid: 864dbb3c8b24f6f499e70fcec8eb7ea1, type: 3}
-    - time: 0.25
+    - time: 0.083333336
       value: {fileID: 271248863, guid: 864dbb3c8b24f6f499e70fcec8eb7ea1, type: 3}
-    - time: 0.75
+    - time: 0.18333334
       value: {fileID: 1122255910, guid: 864dbb3c8b24f6f499e70fcec8eb7ea1, type: 3}
-    - time: 1
+    - time: 0.23333333
+      value: {fileID: 90734519, guid: 864dbb3c8b24f6f499e70fcec8eb7ea1, type: 3}
+    - time: 0.3
+      value: {fileID: 90734519, guid: 864dbb3c8b24f6f499e70fcec8eb7ea1, type: 3}
+    - time: 0.43333334
       value: {fileID: 90734519, guid: 864dbb3c8b24f6f499e70fcec8eb7ea1, type: 3}
     attribute: m_Sprite
     path: YelowHela
@@ -54,12 +58,14 @@ AnimationClip:
     - {fileID: 271248863, guid: 864dbb3c8b24f6f499e70fcec8eb7ea1, type: 3}
     - {fileID: 1122255910, guid: 864dbb3c8b24f6f499e70fcec8eb7ea1, type: 3}
     - {fileID: 90734519, guid: 864dbb3c8b24f6f499e70fcec8eb7ea1, type: 3}
+    - {fileID: 90734519, guid: 864dbb3c8b24f6f499e70fcec8eb7ea1, type: 3}
+    - {fileID: 90734519, guid: 864dbb3c8b24f6f499e70fcec8eb7ea1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 0.45000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
