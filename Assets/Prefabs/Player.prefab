@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.81886786, g: 0.6288287, b: 0.6288287, a: 0.392}
+  m_Color: {r: 0.81886786, g: 0.6288287, b: 0.6288287, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.81886786, g: 0.6288287, b: 0.6288287, a: 0.392}
+  m_Color: {r: 0.81886786, g: 0.6288287, b: 0.6288287, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2051,6 +2051,15 @@ MonoBehaviour:
   maxRedHealth: 10
   maxYellowHealth: 10
   maxGreenHealth: 10
+  OnRedHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGreenHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnYellowHeal:
+    m_PersistentCalls:
+      m_Calls: []
   OnRedHealthChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2063,6 +2072,7 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  deathMenuUI: {fileID: 0}
 --- !u!114 &3009093139275562704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2168,7 +2178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.81886786, g: 0.6288287, b: 0.6288287, a: 0.392}
+  m_Color: {r: 0.81886786, g: 0.6288287, b: 0.6288287, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
