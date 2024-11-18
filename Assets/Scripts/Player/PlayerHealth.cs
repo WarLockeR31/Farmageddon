@@ -89,7 +89,7 @@ public class PlayerHealth : MonoBehaviour
                 break;
             case HealthType.Green:
                 currentGreenHealth = Mathf.Clamp(currentGreenHealth - amount, 0, maxGreenHealth);
-               
+                OnGreenHealthChanged?.Invoke();
                 break;
         }
         CheckForDeath();

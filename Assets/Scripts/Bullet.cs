@@ -54,7 +54,7 @@ public class Bullet : Interactable
         if (other.CompareTag("Player"))
         {
             Manager.getInstance().PlayerHealth.TakeDamage(1, HealthType.Green);
-            hasDealtDamage = true;
+            //hasDealtDamage = true;
             DestroyObj();
         }
     }

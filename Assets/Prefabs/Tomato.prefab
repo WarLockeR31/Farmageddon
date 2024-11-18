@@ -163,7 +163,7 @@ MonoBehaviour:
   damageAmount: 1
   punchRecoilPower: 20
   punchRecoilTime: 0.3
-  visionRadius: 20
+  visionRadius: 70
 --- !u!95 &270976308619443632
 Animator:
   serializedVersion: 5
