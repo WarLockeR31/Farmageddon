@@ -18,6 +18,8 @@ public class PeaScript : MonoBehaviour
     [SerializeField]
     private AudioSource shotSound;
 
+    private GameObject player;
+
     private Animator animator;
     private Rigidbody rb;
     private PeaHealth peaHealth;
@@ -30,6 +32,7 @@ public class PeaScript : MonoBehaviour
         animator = GetComponent<Animator>();
         peaHealth = GetComponent<PeaHealth>();
         rb = GetComponent<Rigidbody>();
+        player = Manager.getInstance().Player;
     }
 
     private void FixedUpdate()
@@ -74,9 +77,12 @@ public class PeaScript : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         if (!other.gameObject.CompareTag("Wall")) return;
-        var item = other.contacts[0];
-        moveDir = Vector3.Reflect(moveDir, item.normal);
+
+        moveDir = transform.position - player.transform.position;
+        var item = other.GetContact(0);
+        moveDir = Vector3.Reflect(moveDir, item.normal).normalized;
         animator.SetTrigger("OffTheWall");
-        Debug.Log(Vector3.Angle(item.normal, moveDir));
+        Debug.Log("normal" + item.normal);
+        Debug.Log("moveDir" + moveDir);
     }
 }

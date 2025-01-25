@@ -5232,6 +5232,10 @@ PrefabInstance:
       propertyPath: deathMenuUI
       value: 
       objectReference: {fileID: 846016154}
+    - target: {fileID: 3716618631652338805, guid: 1bf46ae2810cad84cb78141bf6d64ccb, type: 3}
+      propertyPath: maxGreenHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7651177273457466274, guid: 1bf46ae2810cad84cb78141bf6d64ccb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.25

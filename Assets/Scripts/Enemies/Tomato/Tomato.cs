@@ -71,7 +71,7 @@ public class Tomato : Interactable
             return;
         }
 
-        if (isPunched && (other.gameObject.CompareTag("Enemy")||other.gameObject.CompareTag("Pea")))
+        if (isPunched && (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Pea")))
         {
             animator.Play("Running");
             tomatoHealth.TakeDamage(damageAmount);
@@ -84,7 +84,6 @@ public class Tomato : Interactable
         {
             playerHealth.TakeDamage(damageAmount, HealthType.Red);
             StartCoroutine(PlayerRecoil());
-            
             return;
         }
     }
@@ -106,6 +105,9 @@ public class Tomato : Interactable
 
     public override void BatBeat(Vector3 dir)
     {
+        if (isPunched)
+            return;
+
         base.BatBeat(dir);
         tomatoHealth.TakeDamage(damageAmount);
         animator.SetTrigger("isPunched");
